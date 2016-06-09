@@ -21,7 +21,6 @@ import org.bukkit.World;
 import org.bukkit.WorldBorder;
 import org.bukkit.WorldType;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
@@ -616,27 +615,6 @@ public class PacketTypeClasses {
         public final FieldAccessor<Short> health = getField("a");
         public final FieldAccessor<Short> food = getField("b");
         public final FieldAccessor<Short> foodSaturation = getField("c");
-    }
-
-    public static class NMSPacketPlayOutUpdateSign extends NMSPacket {
-
-        public final FieldAccessor<World> world = getField("a").translate(ConversionPairs.world);
-        public final FieldAccessor<BlockPosition> position = getField("b");
-        public final FieldAccessor<IChatBaseComponent[]> lines = getField("c");
-        private final SafeConstructor<CommonPacket> constructor1 = getPacketConstructor(WorldRef.TEMPLATE.getType(), BlockPosition.class, IChatBaseComponent[].class);
-
-        public Block getBlock(Object packetInstance, World world) {
-            return world.getBlockAt(position.get(packetInstance).getX(), position.get(packetInstance).getY(), position.get(packetInstance).getZ());
-        }
-
-        public void setBlock(Object packetInstance, Block block) {
-            position.set(packetInstance, new BlockPosition(block.getX(), block.getY(), block.getZ()));
-            world.set(packetInstance, block.getWorld());
-        }
-
-        public CommonPacket newInstance(Block b, IChatBaseComponent[] lines) {
-            return constructor1.newInstance(((CraftWorld) b.getWorld()).getHandle(), new BlockPosition(b.getX(), b.getY(), b.getZ()), lines);
-        }
     }
 
     public static class NMSPacketPlayOutUpdateTime extends NMSPacket {

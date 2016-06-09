@@ -61,7 +61,6 @@ public class PacketType extends ClassTemplate<Object> {
     public static final NMSPacketPlayOutTileEntityData OUT_TILE_ENTITY_DATA = new NMSPacketPlayOutTileEntityData();
     public static final NMSPacketPlayOutTitle OUT_TITLE = new NMSPacketPlayOutTitle();
     public static final NMSPacketPlayOutUpdateHealth OUT_UPDATE_HEALTH = new NMSPacketPlayOutUpdateHealth();
-    public static final NMSPacketPlayOutUpdateSign OUT_UPDATE_SIGN = new NMSPacketPlayOutUpdateSign();
     public static final NMSPacketPlayOutUpdateTime OUT_UPDATE_TIME = new NMSPacketPlayOutUpdateTime();
     public static final NMSPacketPlayOutWorldBorder OUT_WORLD_BORDER = new NMSPacketPlayOutWorldBorder();
     public static final NMSPacketPlayOutWorldEvent OUT_WORLD_EVENT = new NMSPacketPlayOutWorldEvent();
