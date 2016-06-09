@@ -34,7 +34,6 @@ public class BlockStateRef {
     public static final FieldAccessor<Integer> z = TEMPLATE.getField("z");
     public static final FieldAccessor<Integer> type = TEMPLATE.getField("flag");
     public static final FieldAccessor<MaterialData> data = TEMPLATE.getField("data");
-    public static final FieldAccessor<Byte> light = TEMPLATE.getField("light");
 
     private static void registerInst(TileInstantiator inst) {
         tileToInst.put(inst.TILE.getType(), inst);
@@ -171,7 +170,6 @@ public class BlockStateRef {
             secondWorld.set(state, block.getWorld());
             chunk.set(state, (CraftChunk)block.getChunk());
             type.set(state, typeId);
-            light.set(state, block.getLightLevel());
             x.set(state, block.getX());
             y.set(state, block.getY());
             z.set(state, block.getZ());

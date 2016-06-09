@@ -14,7 +14,7 @@ public class EnumProtocolRef {
 
     public static final ClassTemplate<?> TEMPLATE = NMSClassTemplate.create("EnumProtocol");
     private static final Object PLAY = EnumProtocol.PLAY;
-    public static final FieldAccessor<Map<EnumProtocolDirection, BiMap<Integer, Class<? extends Packet>>>> packetMap = TEMPLATE.getField("j");
+    public static final FieldAccessor<Map<EnumProtocolDirection, BiMap<Integer, Class<? extends Packet>>>> packetMap = TEMPLATE.getField("h");
 
     public static Class<?> getPacketClassIn(Integer id) {
         return packetMap.get(PLAY).get(EnumProtocolDirection.CLIENTBOUND).get(id);

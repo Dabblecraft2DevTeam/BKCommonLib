@@ -35,10 +35,10 @@ public class EntityRef {
     public static final FieldAccessor<Float> yaw = TEMPLATE.getField("yaw");
     public static final FieldAccessor<Float> pitch = TEMPLATE.getField("pitch");
     public static final FieldAccessor<Random> random = TEMPLATE.getField("random");
-    public static final FieldAccessor<Integer> stepCounter = TEMPLATE.getField("av");
+    public static final FieldAccessor<Integer> stepCounter = TEMPLATE.getField("ax");
     public static final FieldAccessor<Boolean> ignoreChunkCheck = TEMPLATE.getField("i"); //Note: Not sure if the name is correct!
     public static final FieldAccessor<Boolean> isLoaded = TEMPLATE.getField("aa");
-    public static final FieldAccessor<Boolean> allowTeleportation = TEMPLATE.getField("ak");
+    public static final FieldAccessor<Boolean> allowTeleportation = TEMPLATE.getField("al");
 
     /* Methods */
     private static final MethodAccessor<Void> updateFalling = TEMPLATE.getMethod("a", double.class, boolean.class, IBlockData.class, BlockPosition.class);
@@ -47,7 +47,7 @@ public class EntityRef {
     //	private static final MethodAccessor<Boolean> hasMovementSound = TEMPLATE.getMethod("g_");
     private static final MethodAccessor<Void> setRotation = TEMPLATE.getMethod("setYawPitch", float.class, float.class);
     private static final MethodAccessor<Void> burn = TEMPLATE.getMethod("burn", float.class);
-    private static final MethodAccessor<Boolean> isInWaterUpdate = TEMPLATE.getMethod("aj");
+    private static final MethodAccessor<Boolean> isInWaterUpdate = TEMPLATE.getMethod("ak");
     private static final MethodAccessor<Boolean> isInWaterNoUpdate = TEMPLATE.getMethod("isInWater");
     public static final MethodAccessor<String> getSwimSound = TEMPLATE.getMethod("aa");
 

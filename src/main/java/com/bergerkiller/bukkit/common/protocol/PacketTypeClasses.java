@@ -350,19 +350,19 @@ public class PacketTypeClasses {
         public final FieldAccessor<Integer> x = getField("a");
         public final FieldAccessor<Integer> z = getField("b");
         //public final FieldAccessor<ChunkMap> chunkDataBitMap = getField("c");
-        public final FieldAccessor<Boolean> hasBiomeData = getField("e");
-        private final SafeConstructor<CommonPacket> constructor1 = getPacketConstructor(CommonUtil.getNMSClass("Chunk"), boolean.class, int.class);
+        public final FieldAccessor<Boolean> hasBiomeData = getField("f");
+        private final SafeConstructor<CommonPacket> constructor1 = getPacketConstructor(CommonUtil.getNMSClass("Chunk"), int.class);
 
         public CommonPacket newInstance(Chunk chunk) {
             return newInstance(Conversion.toChunkHandle.convert(chunk));
         }
 
         public CommonPacket newInstance(Object chunk) {
-            return newInstance(chunk, true, 0xFFFF);
+            return newInstance(chunk, 0xFFFF);
         }
 
-        public CommonPacket newInstance(Object chunk, boolean hasBiomeData, int sectionsMask) {
-            return constructor1.newInstance(chunk, hasBiomeData, sectionsMask);
+        public CommonPacket newInstance(Object chunk, int sectionsMask) {
+            return constructor1.newInstance(chunk, sectionsMask);
         }
     }
 //Got removed

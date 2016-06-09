@@ -234,7 +234,7 @@ public class ChunkUtil {
      */
     public static boolean isChunkAvailable(World world, int x, int z) {
         Object cps = WorldServerRef.chunkProviderServer.get(Conversion.toWorldHandle.convert(world));
-        if (ChunkProviderServerRef.isChunkLoaded.invoke(cps, x, z)) {
+        if (ChunkProviderServerRef.isLoaded.invoke(cps, x, z)) {
             // Chunk is loaded into memory, True
             return true;
         } else {
