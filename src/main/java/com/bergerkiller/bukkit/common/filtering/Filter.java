@@ -13,5 +13,5 @@ public interface Filter<E> {
      * @param element to check
      * @return True if the element is filtered, False if not
      */
-    public boolean isFiltered(E element);
+    boolean isFiltered(E element);
 }

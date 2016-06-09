@@ -16,5 +16,5 @@ public interface CallbackSignature {
      * @param callbackInstances that are active
      * @return (new) Callback instance
      */
-    public CallbackMethod createCallback(Object instance, Map<Class<?>, Object> callbackInstances);
+    CallbackMethod createCallback(Object instance, Map<Class<?>, Object> callbackInstances);
 }

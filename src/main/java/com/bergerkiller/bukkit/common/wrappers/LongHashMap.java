@@ -1,11 +1,11 @@
 package com.bergerkiller.bukkit.common.wrappers;
 
-import com.bergerkiller.bukkit.common.reflection.classes.LongHashMapEntryRef;
 import com.bergerkiller.bukkit.common.reflection.classes.LongHashMapRef;
 import com.bergerkiller.bukkit.common.utils.MathUtil;
+import org.bukkit.craftbukkit.v1_10_R1.util.LongObjectHashMap;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
 
 /**
  * A wrapper around the internal LongHashMap implementation. This type of
@@ -30,10 +30,6 @@ public class LongHashMap<V> extends BasicWrapper {
      */
     public LongHashMap(int initialCapacity) {
         this();
-        // Initial capacity is 16 by default...if less it is pointless to decrease
-        if (initialCapacity > 16) {
-            LongHashMapRef.setCapacity.invoke(handle, initialCapacity);
-        }
     }
 
     public LongHashMap(Object handle) {
@@ -46,7 +42,7 @@ public class LongHashMap<V> extends BasicWrapper {
      * @return size
      */
     public int size() {
-        return Math.max(((net.minecraft.server.v1_9_R1.LongHashMap) handle).count(), 0);
+        return Math.max(((Integer) LongHashMapRef.size.invoke(handle)), 0);
     }
 
     /**
@@ -63,7 +59,7 @@ public class LongHashMap<V> extends BasicWrapper {
     }
 
     public boolean contains(long key) {
-        return ((net.minecraft.server.v1_9_R1.LongHashMap) handle).contains(key);
+        return ((Boolean) LongHashMapRef.containsKey.invoke(handle, key));
     }
 
     /**
@@ -81,7 +77,7 @@ public class LongHashMap<V> extends BasicWrapper {
 
     @SuppressWarnings("unchecked")
     public V get(long key) {
-        return (V) ((net.minecraft.server.v1_9_R1.LongHashMap) handle).getEntry(key);
+        return (V) LongHashMapRef.get.invoke(handle, key);
     }
 
     /**
@@ -100,7 +96,7 @@ public class LongHashMap<V> extends BasicWrapper {
 
     @SuppressWarnings("unchecked")
     public V remove(long key) {
-        return (V) ((net.minecraft.server.v1_9_R1.LongHashMap) handle).remove(key);
+        return (V) LongHashMapRef.remove.invoke(handle, key);
     }
 
     /**
@@ -117,36 +113,23 @@ public class LongHashMap<V> extends BasicWrapper {
     }
 
     public void put(long key, V value) {
-        ((net.minecraft.server.v1_9_R1.LongHashMap) handle).put(key, value);
+        LongHashMapRef.put.invoke(handle, key, value);
     }
 
     @SuppressWarnings("unchecked")
     public Collection<V> getValues() {
-        Object[] entries = LongHashMapRef.entriesField.get(handle);
-        ArrayList<V> values = new ArrayList<V>(size());
-        for (int i = 0; i < entries.length; i++) {
-            if (entries[i] != null) {
-                values.add((V) LongHashMapEntryRef.entryValue.get(entries[i]));
-            }
-        }
-        return values;
+        return ((LongObjectHashMap) handle).values();
     }
 
     public long[] getKeys() {
-        Object[] entries = LongHashMapRef.entriesField.get(handle);
-        long[] keys = new long[size()];
-        int keyIndex = 0;
-        for (int i = 0; i < entries.length; i++) {
-            if (entries[i] != null) {
-                if (keyIndex >= keys.length) {
-                    // This should never happen, but hey, servers make (size) mistakes!
-                    long[] newKeys = new long[keys.length + 1];
-                    System.arraycopy(keys, 0, newKeys, 0, keys.length);
-                    keys = newKeys;
-                }
-                keys[keyIndex++] = LongHashMapEntryRef.entryKey.get(entries[i]);
-            }
+        Set<Long> keySet = (Set<Long>) LongHashMapRef.keySet.invoke(handle);
+        long[] keys = new long[keySet.size()];
+
+        int i = 0;
+        for (long l : keySet) {
+            keys[i] = l;
         }
+
         return keys;
     }
 }

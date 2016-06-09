@@ -1,17 +1,15 @@
 package com.bergerkiller.bukkit.common.reflection.classes;
 
-import java.util.List;
-
-import org.bukkit.entity.Player;
-
 import com.bergerkiller.bukkit.common.bases.IntVector2;
 import com.bergerkiller.bukkit.common.conversion.ConversionPairs;
 import com.bergerkiller.bukkit.common.reflection.ClassTemplate;
 import com.bergerkiller.bukkit.common.reflection.FieldAccessor;
 import com.bergerkiller.bukkit.common.reflection.MethodAccessor;
+import net.minecraft.server.v1_10_R1.EntityPlayer;
+import net.minecraft.server.v1_10_R1.PlayerChunk;
+import org.bukkit.entity.Player;
 
-import net.minecraft.server.v1_9_R1.EntityPlayer;
-import net.minecraft.server.v1_9_R1.PlayerChunk;
+import java.util.List;
 
 public class PlayerChunkRef {
 

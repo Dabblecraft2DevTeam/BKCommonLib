@@ -9,14 +9,14 @@ import org.bukkit.inventory.Inventory;
  */
 public interface CommonEntityInventory<T extends Entity> {
 
-    public Inventory getInventory();
+    Inventory getInventory();
 
     /**
      * Updates the Inventory (can mean: Update items to viewers)
      */
-    public void update();
+    void update();
 
-    public void setInventoryController(EntityInventoryController<CommonEntity<T>> controller);
+    void setInventoryController(EntityInventoryController<CommonEntity<T>> controller);
 
-    public EntityInventoryController<CommonEntity<T>> getInventoryController();
+    EntityInventoryController<CommonEntity<T>> getInventoryController();
 }

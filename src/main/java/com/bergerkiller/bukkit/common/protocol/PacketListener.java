@@ -14,12 +14,12 @@ public interface PacketListener {
      *
      * @param event Packet event
      */
-    public void onPacketReceive(PacketReceiveEvent event);
+    void onPacketReceive(PacketReceiveEvent event);
 
     /**
      * Gets fired then a packet is sent
      *
      * @param event Packet event
      */
-    public void onPacketSend(PacketSendEvent event);
+    void onPacketSend(PacketSendEvent event);
 }

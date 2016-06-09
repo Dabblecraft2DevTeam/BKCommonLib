@@ -26,6 +26,6 @@ public abstract class ObjectAbstract<T> {
      * Sets the value to null
      */
     public void clear() {
-        set((T) null);
+        set(null);
     }
 }

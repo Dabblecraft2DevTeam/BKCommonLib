@@ -1,6 +1,6 @@
 package com.bergerkiller.bukkit.common.wrappers;
 
-import net.minecraft.server.v1_9_R1.PacketPlayInUseEntity.EnumEntityUseAction;
+import net.minecraft.server.v1_10_R1.PacketPlayInUseEntity.EnumEntityUseAction;
 
 public enum UseAction {
 
@@ -8,7 +8,7 @@ public enum UseAction {
 
     private final Object handle;
 
-    private UseAction(Object handle) {
+    UseAction(Object handle) {
         this.handle = handle;
     }
 

@@ -19,30 +19,30 @@ public interface PacketHandler {
      *
      * @param plugin to remove for
      */
-    public void removePacketListeners(Plugin plugin);
+    void removePacketListeners(Plugin plugin);
 
-    public void removePacketListener(PacketListener listener);
+    void removePacketListener(PacketListener listener);
 
-    public void removePacketMonitor(PacketMonitor monitor);
+    void removePacketMonitor(PacketMonitor monitor);
 
-    public void addPacketListener(Plugin plugin, PacketListener listener, PacketType[] types);
+    void addPacketListener(Plugin plugin, PacketListener listener, PacketType[] types);
 
-    public void addPacketMonitor(Plugin plugin, PacketMonitor monitor, PacketType[] types);
+    void addPacketMonitor(Plugin plugin, PacketMonitor monitor, PacketType[] types);
 
-    public void sendPacket(Player player, Object packet, boolean throughListeners);
+    void sendPacket(Player player, Object packet, boolean throughListeners);
 
-    public void receivePacket(Player player, Object packet);
+    void receivePacket(Player player, Object packet);
 
-    public Collection<Plugin> getListening(PacketType packetType);
+    Collection<Plugin> getListening(PacketType packetType);
 
-    public void transfer(PacketHandler to);
+    void transfer(PacketHandler to);
 
     /**
      * Gets the name of this type of Packet Handler
      *
      * @return packet handler name
      */
-    public String getName();
+    String getName();
 
     /**
      * Called when this Packet Handler has to be enabled. This method should
@@ -50,7 +50,7 @@ public interface PacketHandler {
      *
      * @return True if the handler successfully enabled, False if not
      */
-    public boolean onEnable();
+    boolean onEnable();
 
     /**
      * Called when this Packet Handler has to be disabled. This method should
@@ -58,7 +58,7 @@ public interface PacketHandler {
      *
      * @return True if the handler successfully disabled, False if not
      */
-    public boolean onDisable();
+    boolean onDisable();
 
     /**
      * Called when a new player joins the server and potentially needs a
@@ -66,7 +66,7 @@ public interface PacketHandler {
      *
      * @param player that joined
      */
-    public void onPlayerJoin(Player player);
+    void onPlayerJoin(Player player);
 
     /**
      * Gets the amount of bytes of packet data still pending to be sent to the
@@ -75,5 +75,5 @@ public interface PacketHandler {
      * @param player to get the size for
      * @return pending packet queue byte size
      */
-    public long getPendingBytes(Player player);
+    long getPendingBytes(Player player);
 }

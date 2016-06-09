@@ -1,46 +1,32 @@
 package com.bergerkiller.bukkit.common.protocol;
 
-import java.lang.reflect.Field;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-
-import net.minecraft.server.v1_9_R1.*;
-import org.bukkit.Chunk;
-import org.bukkit.Difficulty;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
-import org.bukkit.WorldType;
-import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_9_R1.CraftWorld;
-import org.bukkit.entity.HumanEntity;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.util.Vector;
-
 import com.bergerkiller.bukkit.common.bases.IntVector2;
 import com.bergerkiller.bukkit.common.bases.IntVector3;
 import com.bergerkiller.bukkit.common.conversion.Conversion;
 import com.bergerkiller.bukkit.common.conversion.ConversionPairs;
-import com.bergerkiller.bukkit.common.conversion.util.ConvertingList;
 import com.bergerkiller.bukkit.common.reflection.FieldAccessor;
 import com.bergerkiller.bukkit.common.reflection.SafeConstructor;
 import com.bergerkiller.bukkit.common.reflection.TranslatorFieldAccessor;
-import com.bergerkiller.bukkit.common.reflection.classes.DataWatcherRef;
-import com.bergerkiller.bukkit.common.reflection.classes.EntityHumanRef;
-import com.bergerkiller.bukkit.common.reflection.classes.EntityRef;
-import com.bergerkiller.bukkit.common.reflection.classes.ItemStackRef;
-import com.bergerkiller.bukkit.common.reflection.classes.PlayerAbilitiesRef;
-import com.bergerkiller.bukkit.common.reflection.classes.WorldRef;
+import com.bergerkiller.bukkit.common.reflection.classes.*;
 import com.bergerkiller.bukkit.common.utils.CommonUtil;
 import com.bergerkiller.bukkit.common.wrappers.DataWatcher;
 import com.bergerkiller.bukkit.common.wrappers.PlayerAbilities;
 import com.bergerkiller.bukkit.common.wrappers.ScoreboardAction;
 import com.bergerkiller.bukkit.common.wrappers.UseAction;
+import net.minecraft.server.v1_10_R1.*;
+import org.bukkit.Chunk;
+import org.bukkit.*;
+import org.bukkit.Material;
+import org.bukkit.World;
+import org.bukkit.WorldBorder;
+import org.bukkit.WorldType;
+import org.bukkit.block.Block;
+import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
+import org.bukkit.entity.HumanEntity;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.util.Vector;
+
+import java.util.*;
 
 public class PacketTypeClasses {
 
@@ -593,7 +579,7 @@ public class PacketTypeClasses {
         private final SafeConstructor<CommonPacket> constructor1 = getPacketConstructor(PacketPlayOutTitle.EnumTitleAction.class, IChatBaseComponent.class, int.class, int.class, int.class);
 
         public CommonPacket newInstance(int a, int b, int c) {
-            return constructor1.newInstance(PacketPlayOutTitle.EnumTitleAction.TIMES, (IChatBaseComponent) null, a, b, c);
+            return constructor1.newInstance(PacketPlayOutTitle.EnumTitleAction.TIMES, null, a, b, c);
         }
 
         public CommonPacket newInstance(PacketPlayOutTitle.EnumTitleAction enumTitleAction, IChatBaseComponent iChatBaseComponent) {

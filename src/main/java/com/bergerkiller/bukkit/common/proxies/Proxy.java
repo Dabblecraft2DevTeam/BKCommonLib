@@ -11,7 +11,7 @@ public interface Proxy<T> {
      *
      * @param base class to set to
      */
-    public void setProxyBase(T base);
+    void setProxyBase(T base);
 
     /**
      * Gets the base class of this Proxy. This is the Object instance where
@@ -19,5 +19,5 @@ public interface Proxy<T> {
      *
      * @return proxy base
      */
-    public T getProxyBase();
+    T getProxyBase();
 }

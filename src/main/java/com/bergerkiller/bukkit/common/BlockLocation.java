@@ -204,10 +204,7 @@ public class BlockLocation {
                 return false;
             }
             value = Math.min(point1.z, point2.z);
-            if (this.z < value || this.z > (value + Math.abs(point1.z - point2.z))) {
-                return false;
-            }
-            return true;
+            return !(this.z < value || this.z > (value + Math.abs(point1.z - point2.z)));
         }
         return false;
     }

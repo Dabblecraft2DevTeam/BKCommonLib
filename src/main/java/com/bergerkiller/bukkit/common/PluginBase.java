@@ -75,7 +75,7 @@ public abstract class PluginBase extends JavaPlugin {
      */
     public void logAction(CommandSender by, String action) {
         if (by instanceof Player) {
-            log(Level.INFO, ((Player) by).getName() + " " + action);
+            log(Level.INFO, by.getName() + " " + action);
         }
     }
 
@@ -910,5 +910,4 @@ public abstract class PluginBase extends JavaPlugin {
     public void updateDependency(Plugin plugin, String pluginName, boolean enabled) {
     }
 
-;
 }

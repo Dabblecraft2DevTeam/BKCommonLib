@@ -16,7 +16,7 @@ public interface PacketMonitor {
      * @param packet to send
      * @param player to send to
      */
-    public void onMonitorPacketSend(CommonPacket packet, Player player);
+    void onMonitorPacketSend(CommonPacket packet, Player player);
 
     /**
      * Called when a packet is about to be received by the server from a player.
@@ -26,5 +26,5 @@ public interface PacketMonitor {
      * @param packet to receive
      * @param player from which the packet came
      */
-    public void onMonitorPacketReceive(CommonPacket packet, Player player);
+    void onMonitorPacketReceive(CommonPacket packet, Player player);
 }

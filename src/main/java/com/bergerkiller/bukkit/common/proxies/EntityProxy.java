@@ -336,13 +336,34 @@ public class EntityProxy<T extends Entity> extends ProxyBase<T> implements Entit
 	public void setGlowing(boolean arg0) {
 		base.setGlowing(arg0);
 	}
-    
+
+    @Override
     public boolean isInvulnerable() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return base.isInvulnerable();
     }
 
-    public void setInvulnerable(boolean invulnerable) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void setInvulnerable(boolean arg0) {
+        base.setInvulnerable(arg0);
+    }
+
+    @Override
+    public boolean isSilent() {
+        return base.isSilent();
+    }
+
+    @Override
+    public void setSilent(boolean arg0) {
+        base.setSilent(arg0);
+    }
+
+    @Override
+    public boolean hasGravity() {
+        return base.hasGravity();
+    }
+
+    @Override
+    public void setGravity(boolean arg0) {
+        base.setGravity(arg0);
     }
 
 

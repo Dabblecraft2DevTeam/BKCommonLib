@@ -9,10 +9,7 @@ public class PaperSpigotServer extends SpigotServer {
 
     @Override
     public boolean init() {
-        if (!super.init() || !Bukkit.getServer().getVersion().contains("PaperSpigot")) {
-            return false;
-        }
-        return true;
+        return !(!super.init() || !Bukkit.getServer().getVersion().contains("PaperSpigot"));
     }
 
     @Override

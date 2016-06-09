@@ -156,6 +156,7 @@
                             <artifactSet>
                                 <excludes>
                                     <exclude>org.bukkit:craftbukkit</exclude>
+                                    <exclude>org.spigotmc:spigot</exclude>
                                     <exclude>org.bukkit:bukkit</exclude>
                                     <exclude>org.yaml:snakeyaml</exclude>
                                     <exclude>net.milkbowl.vault:VaultAPI</exclude>

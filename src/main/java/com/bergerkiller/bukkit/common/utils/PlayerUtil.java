@@ -11,11 +11,13 @@ import com.bergerkiller.bukkit.common.reflection.CBClassTemplate;
 import com.bergerkiller.bukkit.common.reflection.ClassTemplate;
 import com.bergerkiller.bukkit.common.reflection.FieldAccessor;
 import com.bergerkiller.bukkit.common.reflection.MethodAccessor;
-import com.bergerkiller.bukkit.common.reflection.classes.*;
+import com.bergerkiller.bukkit.common.reflection.classes.EntityHumanRef;
+import com.bergerkiller.bukkit.common.reflection.classes.EntityPlayerRef;
+import com.bergerkiller.bukkit.common.reflection.classes.NetworkManagerRef;
+import com.bergerkiller.bukkit.common.reflection.classes.PlayerConnectionRef;
 import com.mojang.authlib.GameProfile;
-import net.minecraft.server.v1_9_R1.ChunkCoordIntPair;
-import net.minecraft.server.v1_9_R1.EntityPlayer;
-import net.minecraft.server.v1_9_R1.WorldServer;
+import net.minecraft.server.v1_10_R1.EntityPlayer;
+import net.minecraft.server.v1_10_R1.WorldServer;
 import org.bukkit.Chunk;
 import org.bukkit.entity.Player;
 

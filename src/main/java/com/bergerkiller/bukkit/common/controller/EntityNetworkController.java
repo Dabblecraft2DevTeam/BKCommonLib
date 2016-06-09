@@ -18,8 +18,7 @@ import com.bergerkiller.bukkit.common.reflection.classes.EntityTrackerEntryRef;
 import com.bergerkiller.bukkit.common.utils.*;
 import com.bergerkiller.bukkit.common.wrappers.DataWatcher;
 import com.google.common.primitives.Ints;
-
-import net.minecraft.server.v1_9_R1.*;
+import net.minecraft.server.v1_10_R1.*;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.HumanEntity;
@@ -64,35 +63,35 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
      */
     public VectorAbstract velSynched = new VectorAbstract() {
         public double getX() {
-        	SafeField<Double> n = new SafeField<>(EntityTrackerEntry.class, "e");
+            SafeField<Double> n = new SafeField<>(EntityTrackerEntry.class, "e");
             return n.get(handle);
         }
 
         public double getY() {
-        	SafeField<Double> o = new SafeField<>(EntityTrackerEntry.class, "f");
+            SafeField<Double> o = new SafeField<>(EntityTrackerEntry.class, "f");
             return o.get(handle);
         }
 
         public double getZ() {
-        	SafeField<Double> p = new SafeField<>(EntityTrackerEntry.class, "g");
+            SafeField<Double> p = new SafeField<>(EntityTrackerEntry.class, "g");
             return p.get(handle);
         }
 
         public VectorAbstract setX(double x) {
-        	SafeField<Double> n = new SafeField<>(EntityTrackerEntry.class, "e");
-        	n.set(handle, x);
+            SafeField<Double> n = new SafeField<>(EntityTrackerEntry.class, "e");
+            n.set(handle, x);
             return this;
         }
 
         public VectorAbstract setY(double y) {
-        	SafeField<Double> o = new SafeField<>(EntityTrackerEntry.class, "f");
-        	o.set(handle, y);
+            SafeField<Double> o = new SafeField<>(EntityTrackerEntry.class, "f");
+            o.set(handle, y);
             return this;
         }
 
         public VectorAbstract setZ(double z) {
-        	SafeField<Double> p = new SafeField<>(EntityTrackerEntry.class, "g");
-        	p.set(handle, z);
+            SafeField<Double> p = new SafeField<>(EntityTrackerEntry.class, "g");
+            p.set(handle, z);
             return this;
         }
     };
@@ -143,57 +142,57 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
         }
 
         public int getX() {
-        	SafeField<Long> xLoc = new SafeField<>(EntityTrackerEntry.class, "xLoc");
-        	return Ints.checkedCast(xLoc.get(handle));
+            SafeField<Long> xLoc = new SafeField<>(EntityTrackerEntry.class, "xLoc");
+            return Ints.checkedCast(xLoc.get(handle));
         }
 
         public int getY() {
-        	SafeField<Long> yLoc = new SafeField<>(EntityTrackerEntry.class, "yLoc");
-        	return Ints.checkedCast(yLoc.get(handle));
+            SafeField<Long> yLoc = new SafeField<>(EntityTrackerEntry.class, "yLoc");
+            return Ints.checkedCast(yLoc.get(handle));
         }
 
         public int getZ() {
-        	SafeField<Long> zLoc = new SafeField<>(EntityTrackerEntry.class, "zLoc");
-        	return Ints.checkedCast(zLoc.get(handle));
+            SafeField<Long> zLoc = new SafeField<>(EntityTrackerEntry.class, "zLoc");
+            return Ints.checkedCast(zLoc.get(handle));
         }
 
         public IntLocationAbstract setX(int x) {
-        	SafeField<Long> xLoc = new SafeField<>(EntityTrackerEntry.class, "xLoc");
-        	xLoc.set(handle, (long) x);
+            SafeField<Long> xLoc = new SafeField<>(EntityTrackerEntry.class, "xLoc");
+            xLoc.set(handle, (long) x);
             return this;
         }
 
         public IntLocationAbstract setY(int y) {
-        	SafeField<Long> yLoc = new SafeField<>(EntityTrackerEntry.class, "yLoc");
-        	yLoc.set(handle, (long) y);
+            SafeField<Long> yLoc = new SafeField<>(EntityTrackerEntry.class, "yLoc");
+            yLoc.set(handle, (long) y);
             return this;
         }
 
         public IntLocationAbstract setZ(int z) {
-        	SafeField<Long> zLoc = new SafeField<>(EntityTrackerEntry.class, "zLoc");
-        	zLoc.set(handle, (long) z);
+            SafeField<Long> zLoc = new SafeField<>(EntityTrackerEntry.class, "zLoc");
+            zLoc.set(handle, (long) z);
             return this;
         }
 
         public int getYaw() {
-        	SafeField<Integer> yRot = new SafeField<>(EntityTrackerEntry.class, "yRot");
-        	return yRot.get(handle);
+            SafeField<Integer> yRot = new SafeField<>(EntityTrackerEntry.class, "yRot");
+            return yRot.get(handle);
         }
 
         public int getPitch() {
-        	SafeField<Integer> xRot = new SafeField<>(EntityTrackerEntry.class, "xRot");
-        	return xRot.get(handle);
+            SafeField<Integer> xRot = new SafeField<>(EntityTrackerEntry.class, "xRot");
+            return xRot.get(handle);
         }
 
         public IntLocationAbstract setYaw(int yaw) {
-        	
-        	SafeField<Integer> yRot = new SafeField<>(EntityTrackerEntry.class, "yRot");
+
+            SafeField<Integer> yRot = new SafeField<>(EntityTrackerEntry.class, "yRot");
             return this;
         }
 
         public IntLocationAbstract setPitch(int pitch) {
-        	SafeField<Integer> xRot = new SafeField<>(EntityTrackerEntry.class, "xRot");
-        	xRot.set(handle, pitch);
+            SafeField<Integer> xRot = new SafeField<>(EntityTrackerEntry.class, "xRot");
+            xRot.set(handle, pitch);
             return this;
         }
     };
@@ -264,14 +263,14 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
      */
     public IntegerAbstract headRotSynched = new IntegerAbstract() {
         public int get() {
-        	SafeField<Integer> headYaw = new SafeField<>(EntityTrackerEntry.class, "headYaw");
-        	return headYaw.get(handle);
+            SafeField<Integer> headYaw = new SafeField<>(EntityTrackerEntry.class, "headYaw");
+            return headYaw.get(handle);
             //return ((EntityTrackerEntry) handle).i;
         }
 
         public IntegerAbstract set(int value) {
-        	SafeField<Integer> headYaw = new SafeField<>(EntityTrackerEntry.class, "headYaw");
-        	headYaw.set(handle, value);
+            SafeField<Integer> headYaw = new SafeField<>(EntityTrackerEntry.class, "headYaw");
+            headYaw.set(handle, value);
             //((EntityTrackerEntry) handle).i = value;
             return this;
         }
@@ -388,7 +387,7 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
      * Binds this Entity Network Controller to an Entity. This is called from
      * elsewhere, and should be ignored entirely.
      *
-     * @param entity to bind with
+     * @param entity             to bind with
      * @param entityTrackerEntry to bind with
      */
     public final void bind(T entity, Object entityTrackerEntry) {
@@ -483,8 +482,8 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
 
     private boolean isViewable(Player viewer) {
         // View range check
-        final int dx = MathHelper.floor(Math.abs(EntityUtil.getLocX(viewer) - (double) (this.locSynched.getX() / 32.0)));
-        final int dz = MathHelper.floor(Math.abs(EntityUtil.getLocZ(viewer) - (double) (this.locSynched.getZ() / 32.0)));
+        final int dx = MathHelper.floor(Math.abs(EntityUtil.getLocX(viewer) - this.locSynched.getX() / 32.0));
+        final int dz = MathHelper.floor(Math.abs(EntityUtil.getLocZ(viewer) - this.locSynched.getZ() / 32.0));
         final int view = this.getViewDistance();
         if (dx > view || dz > view) {
             return false;
@@ -516,9 +515,9 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
     /**
      * Ensures that the Entity is no longer displayed to the viewer
      *
-     * @param viewer to hide this Entity for
+     * @param viewer  to hide this Entity for
      * @param instant option: True to instantly hide, False to queue it for the
-     * next tick
+     *                next tick
      */
     public void makeHidden(Player viewer, boolean instant) {
         // If instant, do not send other destroy messages, if not, send one
@@ -543,7 +542,7 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
      * viewers will see the Entity disappear.
      *
      * @param instant option: True to instantly hide, False to queue it for the
-     * next tick
+     *                next tick
      */
     public void makeHiddenForAll(boolean instant) {
         for (Player viewer : getViewers()) {
@@ -644,7 +643,7 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
             }
 
             // Entity Mob Effects
-            for (MobEffect effect : (Collection<MobEffect>) living.getEffects()) {
+            for (MobEffect effect : living.getEffects()) {
                 PacketUtil.sendPacket(viewer, PacketType.OUT_ENTITY_EFFECT_ADD.newInstance(entity.getEntityId(), effect));
             }
         }
@@ -895,10 +894,10 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
     /**
      * Synchronizes the entity position / rotation absolutely
      *
-     * @param posX - protocol position X
-     * @param posY - protocol position Y
-     * @param posZ - protocol position Z
-     * @param yaw - protocol rotation yaw
+     * @param posX  - protocol position X
+     * @param posY  - protocol position Y
+     * @param posZ  - protocol position Z
+     * @param yaw   - protocol rotation yaw
      * @param pitch - protocol rotation pitch
      */
     public void syncLocationAbsolute(int posX, int posY, int posZ, int yaw, int pitch) {
@@ -931,11 +930,11 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
      *
      * @param position - whether to update position (read pos on/off)
      * @param rotation - whether to update rotation (read yawpitch on/off)
-     * @param posX - protocol position X
-     * @param posY - protocol position Y
-     * @param posZ - protocol position Z
-     * @param yaw - protocol rotation yaw
-     * @param pitch - protocol rotation pitch
+     * @param posX     - protocol position X
+     * @param posY     - protocol position Y
+     * @param posZ     - protocol position Z
+     * @param yaw      - protocol rotation yaw
+     * @param pitch    - protocol rotation pitch
      */
     public void syncLocation(boolean position, boolean rotation, int posX, int posY, int posZ, int yaw, int pitch) {
         // No position updates allowed for passengers (this is FORCED). Rotation is allowed.
@@ -981,6 +980,7 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
      * =====  Very basic protocol-related methods =====
      * ================================================
      */
+
     /**
      * Sends a packet to all viewers, excluding the entity itself
      *
@@ -994,8 +994,8 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
      * Sends a packet to all viewers, and if set, to itself
      *
      * @param packet to send
-     * @param self option: True to send to self (if a player), False to not send
-     * to self
+     * @param self   option: True to send to self (if a player), False to not send
+     *               to self
      */
     public void broadcast(CommonPacket packet, boolean self) {
         if (self && entity.getEntity() instanceof Player) {
@@ -1010,10 +1010,10 @@ public abstract class EntityNetworkController<T extends CommonEntity<?>> extends
     /**
      * Gets a new packet with absolute Entity position information
      *
-     * @param posX - position X (protocol)
-     * @param posY - position Y (protocol)
-     * @param posZ - position Z (protocol)
-     * @param yaw - position yaw (protocol)
+     * @param posX  - position X (protocol)
+     * @param posY  - position Y (protocol)
+     * @param posZ  - position Z (protocol)
+     * @param yaw   - position yaw (protocol)
      * @param pitch - position pitch (protocol)
      * @return a packet with absolute position information
      */

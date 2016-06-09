@@ -91,7 +91,7 @@ public class SafeField<T> implements FieldAccessor<T> {
      * @return True if static, False if not
      */
     public boolean isStatic() {
-        return this.field == null ? false : Modifier.isStatic(this.field.getModifiers());
+        return this.field != null && Modifier.isStatic(this.field.getModifiers());
     }
 
     @Override

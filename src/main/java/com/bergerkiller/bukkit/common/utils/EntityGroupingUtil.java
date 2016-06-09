@@ -419,10 +419,7 @@ public class EntityGroupingUtil {
         if (entity != null) {
             Set<EntityCategory> thisEntityCategories = getCategories(entity.getClass());
             if (thisEntityCategories.size() == 1 && thisEntityCategories.contains(EntityCategory.OTHER)) {
-                if (entityCategorySet.size() == 1 && entityCategorySet.contains(EntityCategory.OTHER)) {
-                    return true;
-                }
-                return false;
+                return entityCategorySet.size() == 1 && entityCategorySet.contains(EntityCategory.OTHER);
             }
             for (EntityCategory x : entityCategorySet) {
                 if (thisEntityCategories.contains(x)) {
@@ -534,7 +531,7 @@ public class EntityGroupingUtil {
     /**
      * Represents a certain category of entities
      */
-    public static enum EntityCategory {
+    public enum EntityCategory {
         KILLER_BUNNY(true, false, "isKillerBunny"),
         TAMED(true, false, "isTamed"),
         JOCKEY(true, false, "isJockey"),
@@ -554,21 +551,21 @@ public class EntityGroupingUtil {
         private Set<Class<?>> entityClasses;
         private Method method;
 
-        private EntityCategory(boolean isMob, boolean isLegacyMob) {
+        EntityCategory(boolean isMob, boolean isLegacyMob) {
             this.isMob = isMob;
             this.isLegacyMob = isLegacyMob;
             this.setEntityClasses();
             this.setMethod(null);
         }
 
-        private EntityCategory(boolean isMob, boolean isLegacyMob, Class<?>...classes) {
+        EntityCategory(boolean isMob, boolean isLegacyMob, Class<?>... classes) {
             this.isMob = isMob;
             this.isLegacyMob = isLegacyMob;
             this.setMethod(null);
             this.setEntityClasses(classes);
         }
 
-        private EntityCategory(boolean isMob, boolean isLegacyMob, String methodName) {
+        EntityCategory(boolean isMob, boolean isLegacyMob, String methodName) {
             this.isMob = isMob;
             this.isLegacyMob = isLegacyMob;
             this.setEntityClasses();

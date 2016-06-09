@@ -22,9 +22,9 @@ public class NibbleArrayRef {
             public Integer invoke(Object instance, Object... args) {
                 byte[] data = array.get(instance);
                 byte[] rawBuffer = (byte[]) args[0];
-                int rawLength = ((Integer) args[1]).intValue();
+                int rawLength = (Integer) args[1];
                 System.arraycopy(data, 0, rawBuffer, rawLength, data.length);
-                return Integer.valueOf(data.length + rawLength);
+                return data.length + rawLength;
             }
         };
         getValueArray = new SafeDirectMethod<byte[]>() {
@@ -51,7 +51,7 @@ public class NibbleArrayRef {
      * @return The offset added to the size of the Nibble Array
      */
     public static int copyTo(Object nibbleArray, byte[] array, int offset) {
-        return copyToByteArray.invoke(nibbleArray, array, offset).intValue();
+        return copyToByteArray.invoke(nibbleArray, array, offset);
     }
 
     /**

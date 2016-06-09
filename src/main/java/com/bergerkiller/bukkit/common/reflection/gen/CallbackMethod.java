@@ -17,5 +17,5 @@ public interface CallbackMethod {
      * @return the return type from the Callback
      * @throws Throwable - if anything goes wrong while invoking the Callback
      */
-    public Object invoke(Object instance, Object[] args) throws Throwable;
+    Object invoke(Object instance, Object[] args) throws Throwable;
 }

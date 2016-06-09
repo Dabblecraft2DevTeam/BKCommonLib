@@ -101,7 +101,7 @@ public class Conversion extends ConversionTypes {
             // Found. Put into map for faster look-up
             converters.put(type, (Converter<Object>) converter);
         }
-        return (Converter<T>) converter;
+        return converter;
     }
 
     /**

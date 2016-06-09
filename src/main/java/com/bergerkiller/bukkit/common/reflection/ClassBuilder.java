@@ -39,7 +39,7 @@ public class ClassBuilder {
 
     @SuppressWarnings("rawtypes")
     public ClassBuilder(Class<?> superclass, Class... callbackClasses) {
-        this(superclass, Arrays.asList((Class<?>[]) callbackClasses));
+        this(superclass, Arrays.<Class<?>>asList((Class<?>[]) callbackClasses));
     }
 
     public ClassBuilder(Class<?> superclass, Collection<Class<?>> callbackClasses) {

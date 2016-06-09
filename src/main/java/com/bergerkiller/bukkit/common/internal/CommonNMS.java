@@ -10,12 +10,12 @@ import com.bergerkiller.bukkit.common.reflection.classes.EntityLivingRef;
 import com.bergerkiller.bukkit.common.utils.CommonUtil;
 import com.bergerkiller.bukkit.common.utils.HandUtil;
 import com.bergerkiller.bukkit.common.utils.LogicUtil;
-import net.minecraft.server.v1_9_R1.*;
+import net.minecraft.server.v1_10_R1.*;
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_9_R1.CraftWorld;
-import org.bukkit.craftbukkit.v1_9_R1.inventory.CraftInventory;
-import org.bukkit.craftbukkit.v1_9_R1.inventory.CraftItemStack;
-import org.bukkit.craftbukkit.v1_9_R1.util.CraftMagicNumbers;
+import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_10_R1.inventory.CraftInventory;
+import org.bukkit.craftbukkit.v1_10_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_10_R1.util.CraftMagicNumbers;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Minecart;
@@ -212,7 +212,7 @@ public class CommonNMS {
 
     @SuppressWarnings("unchecked")
     public static List<Entity> getEntitiesIn(World world, Entity ignore, AxisAlignedBB bounds) {
-        return (List<Entity>) world.getEntities(ignore, bounds.grow(0.25, 0.25, 0.25));
+        return world.getEntities(ignore, bounds.grow(0.25, 0.25, 0.25));
     }
 
     public static List<org.bukkit.entity.Entity> getEntities(org.bukkit.World world, org.bukkit.entity.Entity ignore, AxisAlignedBB area) {

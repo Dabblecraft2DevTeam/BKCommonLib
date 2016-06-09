@@ -39,10 +39,7 @@ public class ProtocolLibPacketHandler implements PacketHandler {
         // Check whether all required classes are available
         Class<?> manager = CommonUtil.getClass(LIB_ROOT + "ProtocolManager");
         Class<?> packetContainer = CommonUtil.getClass(LIB_ROOT + "events.PacketContainer");
-        if (manager == null || packetContainer == null) {
-            return false;
-        }
-        return true;
+        return !(manager == null || packetContainer == null);
     }
 
     @Override

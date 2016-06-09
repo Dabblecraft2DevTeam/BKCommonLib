@@ -49,14 +49,14 @@ public class SpigotDummyFlatMap {
         }
     }
 
-    public static interface FlatMapMethods {
+    public interface FlatMapMethods {
 
-        public Object get(long msw, long lsw);
+        Object get(long msw, long lsw);
 
-        public Object get(long key);
+        Object get(long key);
 
-        public void put(long msw, long lsw, Object value);
+        void put(long msw, long lsw, Object value);
 
-        public void put(long key, Object value);
+        void put(long key, Object value);
     }
 }

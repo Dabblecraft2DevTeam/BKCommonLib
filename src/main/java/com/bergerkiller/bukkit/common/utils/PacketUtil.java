@@ -8,13 +8,12 @@ import com.bergerkiller.bukkit.common.protocol.PacketListener;
 import com.bergerkiller.bukkit.common.protocol.PacketMonitor;
 import com.bergerkiller.bukkit.common.protocol.PacketType;
 import com.bergerkiller.bukkit.common.reflection.classes.ChunkRef;
-import net.minecraft.server.v1_9_R1.Packet;
+import net.minecraft.server.v1_10_R1.Packet;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 public class PacketUtil {

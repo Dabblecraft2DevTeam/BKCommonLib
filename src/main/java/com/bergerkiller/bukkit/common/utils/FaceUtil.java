@@ -34,7 +34,7 @@ public class FaceUtil {
      */
     public static int faceToNotch(BlockFace face) {
         Integer notch = notches.get(face);
-        return notch == null ? 0 : notch.intValue();
+        return notch == null ? 0 : notch;
     }
 
     /**

@@ -1,32 +1,26 @@
 package com.bergerkiller.bukkit.common.reflection.classes;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
-import org.bukkit.SkullType;
-import org.bukkit.World;
-import org.bukkit.block.Block;
-import org.bukkit.block.BlockState;
-import org.bukkit.craftbukkit.v1_9_R1.CraftChunk;
-import org.bukkit.craftbukkit.v1_9_R1.CraftWorld;
-import org.bukkit.craftbukkit.v1_9_R1.block.CraftBlockState;
-import org.bukkit.material.MaterialData;
-
 import com.bergerkiller.bukkit.common.collections.ClassMap;
-import com.bergerkiller.bukkit.common.reflection.CBClassTemplate;
-import com.bergerkiller.bukkit.common.reflection.ClassTemplate;
-import com.bergerkiller.bukkit.common.reflection.FieldAccessor;
-import com.bergerkiller.bukkit.common.reflection.MethodAccessor;
-import com.bergerkiller.bukkit.common.reflection.NMSClassTemplate;
+import com.bergerkiller.bukkit.common.reflection.*;
 import com.bergerkiller.bukkit.common.utils.BlockUtil;
 import com.bergerkiller.bukkit.common.utils.CommonUtil;
 import com.bergerkiller.bukkit.common.utils.MaterialUtil;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.server.v1_10_R1.CommandBlockListenerAbstract;
+import net.minecraft.server.v1_10_R1.IChatBaseComponent;
+import net.minecraft.server.v1_10_R1.TileEntitySkull;
+import org.bukkit.SkullType;
+import org.bukkit.World;
+import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
+import org.bukkit.craftbukkit.v1_10_R1.CraftChunk;
+import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_10_R1.block.CraftBlockState;
+import org.bukkit.material.MaterialData;
 
-import net.minecraft.server.v1_9_R1.CommandBlockListenerAbstract;
-import net.minecraft.server.v1_9_R1.IChatBaseComponent;
-import net.minecraft.server.v1_9_R1.TileEntitySkull;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class BlockStateRef {
 
@@ -79,7 +73,7 @@ public class BlockStateRef {
                 TileEntitySkull t = (TileEntitySkull) tile;
                 state_profile.set(state, t.getGameProfile());
                 state_type.set(state, state_getSkullType.invoke(null, t.getSkullType()));
-                state_rotation.set(state, (byte) t.getRotation());
+                state_rotation.set(state, (byte) t.rotation);
             }
         });
         registerInst(new TileInstantiator("Command", "CommandBlock", "commandBlock") {

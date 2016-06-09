@@ -241,7 +241,7 @@ public class CommonScoreboard {
         return board;
     }
 
-    public static enum Display {
+    public enum Display {
 
         LIST(0, "list", "List"),
         SIDEBAR(1, "sidebar", "SideBar"),

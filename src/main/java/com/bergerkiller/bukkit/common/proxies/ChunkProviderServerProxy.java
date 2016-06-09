@@ -1,8 +1,9 @@
 package com.bergerkiller.bukkit.common.proxies;
 
+import com.bergerkiller.bukkit.common.bases.LongHash;
 import net.friwi.reflection.ChunkPosition;
-import net.minecraft.server.v1_9_R1.BiomeBase.BiomeMeta;
-import net.minecraft.server.v1_9_R1.*;
+import net.minecraft.server.v1_10_R1.BiomeBase.BiomeMeta;
+import net.minecraft.server.v1_10_R1.*;
 
 import java.util.List;
 
@@ -148,13 +149,18 @@ public class ChunkProviderServerProxy extends ChunkProviderServer implements Pro
         return super.getOrLoadChunkAt(x, z);
     }
 
-    @Override
+    @Deprecated
     public boolean isChunkLoaded(int x, int z) {
-        return base.isChunkLoaded(x, z);
+        return isLoaded(x, z);
+    }
+
+    @Override
+    public boolean isLoaded(int x, int z) {
+        return base.isLoaded(x, z);
     }
 
     public boolean super_isChunkLoaded(int x, int z) {
-        return super.isChunkLoaded(x, z);
+        return super.isLoaded(x, z);
     }
 
     @Override
@@ -166,13 +172,23 @@ public class ChunkProviderServerProxy extends ChunkProviderServer implements Pro
         return super.loadChunk(x, z);
     }
 
-    @Override
+    @Deprecated
     public void queueUnload(int x, int z) {
-        base.queueUnload(x, z);
+        unload(base.chunks.get(LongHash.toLong(x, z)));
     }
 
+    @Override
+    public void unload(Chunk chunk) {
+        base.unload(chunk);
+    }
+
+    @Deprecated
     public void super_queueUnload(int x, int z) {
-        super.queueUnload(x, z);
+        super.unload(base.chunks.get(LongHash.toLong(x, z)));
+    }
+
+    public void super_unload(Chunk chunk) {
+        super.unload(chunk);
     }
 
     public void recreateStructures(Chunk chunk, int x, int z) {

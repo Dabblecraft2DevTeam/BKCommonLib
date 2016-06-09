@@ -280,7 +280,7 @@ public class CommonTeam implements Serializable {
         return packet;
     }
 
-    public static enum FriendlyFireType {
+    public enum FriendlyFireType {
 
         /**
          * PVP disabled

@@ -11,5 +11,5 @@ public interface PermissionChecker {
      * @param permission to check
      * @return True if permission was granted, False if not
      */
-    public boolean handlePermission(CommandSender sender, String permission);
+    boolean handlePermission(CommandSender sender, String permission);
 }
