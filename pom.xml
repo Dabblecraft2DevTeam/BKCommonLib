@@ -13,9 +13,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mcversion>v1_9_R1</project.mcversion>
-        <project.bversion>1.9-R0.1</project.bversion>
-        <project.cbversion>1.9-R0.1</project.cbversion>
+        <project.mcversion>v1_10_R0.1</project.mcversion>
+        <project.bversion>1.10-R0.1</project.bversion>
+        <project.cbversion>1.10-R0.1</project.cbversion>
         <project.stableversion>1.68</project.stableversion>
         <project.stableserver>1.8.9-R0.1</project.stableserver>
         <project.stabledate>30 June 2015</project.stabledate>
@@ -53,11 +53,9 @@
             <version>${project.bversion}-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>craftbukkit</artifactId>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
             <version>${project.cbversion}-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/spigot-1.9.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>cglib</groupId>
