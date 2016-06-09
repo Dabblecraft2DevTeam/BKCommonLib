@@ -20,9 +20,9 @@ public class EntityRef {
 
     /* Fields */
     public static final FieldAccessor<org.bukkit.entity.Entity> bukkitEntity = TEMPLATE.getField("bukkitEntity");
-    public static final FieldAccessor<Integer> chunkX = TEMPLATE.getField("ab");
-    public static final FieldAccessor<Integer> chunkY = TEMPLATE.getField("ac");
-    public static final FieldAccessor<Integer> chunkZ = TEMPLATE.getField("ad");
+    public static final FieldAccessor<Integer> chunkX = TEMPLATE.getField("ac");
+    public static final FieldAccessor<Integer> chunkY = TEMPLATE.getField("ad");
+    public static final FieldAccessor<Integer> chunkZ = TEMPLATE.getField("ae");
     public static final FieldAccessor<Boolean> positionChanged = TEMPLATE.getField("impulse");
     public static final FieldAccessor<Boolean> velocityChanged = TEMPLATE.getField("velocityChanged");
     //	public static final FieldAccessor<Boolean> justLanded = TEMPLATE.getField("g");
