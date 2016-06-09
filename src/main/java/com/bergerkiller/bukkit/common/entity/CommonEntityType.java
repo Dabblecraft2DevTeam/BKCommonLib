@@ -174,6 +174,7 @@ public class CommonEntityType {
         add(EntityType.ENDER_SIGNAL, "EnderSignal", 64, 4, true);
         add(EntityType.EGG, "Egg", 64, 10, true);
         add(EntityType.SPLASH_POTION, "Potion", 64, 10, true);
+        add(EntityType.LINGERING_POTION, "Potion", 80, 3, true);
         add(EntityType.THROWN_EXP_BOTTLE, "ThrownExpBottle", 64, 10, true);
         add(EntityType.FIREWORK, "Fireworks", 64, 10, true);
         add(EntityType.DROPPED_ITEM, "Item", 64, 20, true);
@@ -205,6 +206,7 @@ public class CommonEntityType {
         add(EntityType.MUSHROOM_COW, "MushroomCow", 80, 3, true);
         add(EntityType.OCELOT, "Ocelot", 80, 3, true);
         add(EntityType.PIG, "Pig", 80, 3, true);
+        add(EntityType.POLAR_BEAR, "PolarBear", 80, 3, true);
         add(EntityType.PIG_ZOMBIE, "PigZombie", 80, 3, true);
         add(EntityType.SHEEP, "Sheep", 80, 3, true);
         add(EntityType.SILVERFISH, "Silverfish", 80, 3, true);
