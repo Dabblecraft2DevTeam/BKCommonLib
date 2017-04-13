@@ -49,11 +49,6 @@
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>${project.bversion}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>${project.cbversion}</version>
         </dependency>
